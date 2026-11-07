@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n, m;
+    double a[100][100];
+    int count = 0;
+
+    printf("Enter rows and columns: ");
+    scanf("%d %d", &n, &m);
+
+    printf("Enter matrix:\n");
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            scanf("%lf", &a[i][j]);
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (i > j && a[i][j] < 0) {
+                count++;
+            }
+        }
+    }
+
+    printf("Negative elements: %d\n", count);
+
+    for (int i = 0; i < n; i++) {
+        double S = 5;
+
+        for (int j = 0; j < m; j++) {
+            S += sin(a[i][j]) + a[i][j] / 7;
+        }
+
+        printf("%lf\n", S);
+    }
+
+    return 0;
+}
