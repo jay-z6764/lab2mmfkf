@@ -167,16 +167,14 @@ int main() {
         }
     }
 
-    // 1. Zamenit otricatelnye elementy glavnoy diagonali
-
+    
     for (int i = 0; i < N && i < M; i++) {
         if (Matrix[i * M + i] < 0) {
             Matrix[i * M + i] = -Matrix[i * M + i];
         }
     }
 
-    // 2. Nayti maksimalnyy element vtoroy stroki
-
+    
     int k = -1;
     float max = 0;
 
@@ -189,8 +187,7 @@ int main() {
         }
     }
 
-    // 3. Pomenyat naydennyy element mestami s a33
-
+    
     if (k != -1) {
         float temp = Matrix[M + k];
         Matrix[M + k] = Matrix[2 * M + 2];
